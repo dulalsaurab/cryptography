@@ -3,7 +3,7 @@ The solution to these problems are on this git hub repository, I encourage you t
 
 **Problems compiled by Kul Prasad Subedi, The University of Memphis**
 
-#### 1.Decrypt the following encrypted messages using shift cipher 
+#### 1. Decrypt the following encrypted messages using shift cipher 
 
 1.  hjizt5xvi5wz5hvyz5amjh5adiydib5qpgizmvwdgdodzn5viy5rmdodib5zskgjdon 
 2. suzawnafy2kgew2ygsd2af2lzw2hjwkwfuw2gx2sf2svnwjksjq2:sulanw2gj2hskkanw; 
