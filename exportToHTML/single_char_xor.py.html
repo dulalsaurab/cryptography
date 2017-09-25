@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>single_char_xor.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(128,128,128); font-style: italic; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,0,128); font-weight: bold; }
+.s3 { color: rgb(0,128,128); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+single_char_xor.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">#Single byte XOR cipher.</span><span class="s1"> 
+</span><span class="s0">#https://en.wikipedia.org/wiki/Etaoin_shrdlu</span><span class="s1"> 
+ 
+</span><span class="s2">import </span><span class="s1">binascii 
+</span><span class="s2">import </span><span class="s1">collections 
+ 
+ 
+</span><span class="s2">def </span><span class="s1">probability_of_being_legit_string(string): 
+    </span><span class="s0">#According to english letter frequency table, &quot;etaoin shrdlu&quot; is a most frequent english letters in words -  from heigher to lower frequency of occurence</span><span class="s1"> 
+ 
+    </span><span class="s2">return </span><span class="s1">string.count(</span><span class="s3">' '</span><span class="s1">)+string.count(</span><span class="s3">'e'</span><span class="s1">)+string.count(</span><span class="s3">'t'</span><span class="s1">)+string.count(</span><span class="s3">'a'</span><span class="s1">)+string.count(</span><span class="s3">'o'</span><span class="s1">)+string.count(</span><span class="s3">'i'</span><span class="s1">)+string.count(</span><span class="s3">'n'</span><span class="s1">) 
+    </span><span class="s0">#Including all the etaoin shrdul, will maximize the given funciton, and hence also the accuracy of the predction.</span><span class="s1"> 
+ 
+</span><span class="s2">def </span><span class="s1">__single_char_XOR_cypher(): 
+    </span><span class="s0"># Given hex text</span><span class="s1"> 
+    encoded=</span><span class="s3">'''3a09060c0705060d1b1b48011b480e071d060c480d1e0d1a111f000d1a0d480106480b1a11181c070f1a0918001152480106481c000d480f0d060d1a091c01070648070e481b0d0b1a0d1c48030d111b44480106480d060b1a11181c010706481b0b000d050d1b444809060c480d1e0d06480106481c000d48091c1c090b031b480706480b1a11181c071b111b1c0d051b46'''</span><span class="s1"> 
+    nums = binascii.unhexlify(encoded) 
+    big_list=[] 
+    </span><span class="s2">for </span><span class="s1">key </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">256</span><span class="s1">): 
+        arr = </span><span class="s3">''</span><span class="s1"> 
+        </span><span class="s2">for </span><span class="s1">num </span><span class="s2">in </span><span class="s1">nums: 
+            arr= arr+chr(num^key) 
+        big_list.append(arr) 
+    </span><span class="s2">return  </span><span class="s1">max(big_list, key=probability_of_being_legit_string) 
+ 
+    </span><span class="s0"># There are 256 possibilities of characters i.e 2 hex digits i.e ff</span><span class="s1"> 
+ 
+ 
+ 
+</span></pre>
+</body>
+</html>
