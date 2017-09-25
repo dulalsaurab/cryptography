@@ -3,7 +3,7 @@ import string
 import single_char_xor as scxc
 
 
-# This function convert give decimal or hex number in binary
+# This function converts given decimal or hex number in binary
 def binary_conversion(decimal=None, hex=None):
     resultant_binary_dec = ''
     resultant_binary_hex = ''
@@ -15,8 +15,8 @@ def binary_conversion(decimal=None, hex=None):
     if hex:
         resultant_binary_hex, gr = binary_conversion(int(hex, 16),
                                                      '')
-        #This is an recursive call, thus we don't
-        #expect any value in gr(gavage for simplicity)
+        # This is a recursive call, thus we don't
+        # expect any value in gr(garvage for simplicity)
 
     return resultant_binary_dec, resultant_binary_hex
 
@@ -24,15 +24,15 @@ def binary_conversion(decimal=None, hex=None):
 # This function xor two string of same length
 # or a whole string with single char or num
 # This function only operates with hex values,
-# so trying other than hex will produce a garbage value
+# So, trying other than hex will produce a garbage output
 def XOR(string1=None, string2=None, type=None):
-    # since the length are expected to be same,
-    # we can run a loop through the length on any one sting
+    # Length of strings are expected to be same,
+    # we can run a loop through the length of any one sting
     xor_result = ''
     if type == 'E':  # for equal length
         for index, str1 in enumerate(string1):
-            # This does a xor operation, since xor can only be done in number,
-            # I have converted to corresponding value and subtracted it by 87 to get hex
+            # This does a xor operation, xor can only operate in number,
+            # So, I have converted to corresponding char value to ascii and subtracted it by 87 to get hex
             xor_buf = ((ord(str1) - 87)
                        if str1.isalpha()
                        else (int(str1))) ^ (
@@ -64,15 +64,8 @@ def base64_encoding(hex_string):
                                          (hex_string, 'hex'), 'base64').decode()
     return base64_encoded_value
 
-
-def find_if_real_eng_message(decoded_text):
-    decoded_message = ''
-    # return true or false
-    return
-
-
 def sift_ciphers(encText):
-    # it has a key range always from 0 - 25
+    # it has a key ranging from 0 - 25
     # letter are converted to number such as A =1, B = 2
     decoded__list = []
     for key in range(0, 26):
@@ -94,11 +87,11 @@ def num_to_hex(num):
     hex_holder = ''
 
     while (num > 0):
-        # The operator used below is similar to tertary operator ?:, its "a if condition b"
+        # The operator used below is similar to tertary operator ?:, its similar to "a if condition b"
         hex_holder = str(chr(int(num % 16) + 87)
                          if int(num % 16) > 9
                          else int(num % 16)) + hex_holder
-        # num%16 will be in range 10-15 if alpha
+        # num%16 will be in range 10-15, if alpha
         # Thus adding 87 will give corresponding ascii letter
 
         num = int(num / 16)
