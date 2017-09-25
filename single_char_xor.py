@@ -12,8 +12,10 @@ def probability_of_being_legit_string(string):
 
     return string.count(' ') + string.count('e') + string.count('t') + string.count('a') + string.count(
         'o') + string.count('i') + string.count('n')
-    # Including all the “etaoin shrdul”, will maximize
+
+    # Including all the “etaoin shrdul”, will maximize 
     # the given function, and hence also the accuracy of the prediction.
+    #Though, I have incluced only etaoin, and its giving me accurate result all the time
 
 
 def __single_char_XOR_cypher(encoded):
@@ -26,5 +28,3 @@ def __single_char_XOR_cypher(encoded):
             arr = arr + chr(num ^ key)
         big_list.append(arr)
     return max(big_list, key=probability_of_being_legit_string)
-
-    # There are 256 possibilities of characters i.e 2 hex digits i.e ff
