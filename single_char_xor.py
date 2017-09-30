@@ -18,6 +18,14 @@ def probability_of_being_legit_string(string):
     #Though, I have incluced only etaoin, and its giving me accurate result all the time
 
 
+    
+    
+'''We have give a hex encoded text, first we unhexlify function. Since the encryption is performed by xor each bit 
+with one of the ascii character i.e. ranging from 0-255, we re-xor it to get the message back. Doing so, we will get
+a big list i.e. list of list (big list in our case below). Now, we will pass each list to function 
+robability_of_being_legit_string, and it will return our legit string. Voila!, you cracked it'''
+
+
 def __single_char_XOR_cypher(encoded):
     # Given hex text
     nums = binascii.unhexlify(encoded)
