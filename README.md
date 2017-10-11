@@ -1,4 +1,9 @@
-## Simple Cryptographic Problems 
+***"There are people who are very poor at documentation, spelling and grammar, 
+voila! you found one. Good Luck"*** 
+
+Simple Cryptographic Problems 
+=========
+
 The solution to these problems are on this git hub repository, I encourage you to complete them yourself before viewing my rough, haphazard, purrrr... code. 
 
 **Problems compiled by Kul Prasad Subedi, The University of Memphis**
